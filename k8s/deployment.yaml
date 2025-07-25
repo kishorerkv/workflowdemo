@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workflowdemo-app
+  labels:
+    app: workflowdemo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: workflowdemo
+  template:
+    metadata:
+      labels:
+        app: workflowdemo
+    spec:
+      containers:
+      - name: workflowdemo
+        image: ghcr.io/kishorekv/workflowdemo:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: APP_VERSION
+          value: "1.0.0"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
