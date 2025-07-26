@@ -1,7 +1,7 @@
 {
   "name": "workflowdemo",
   "version": "1.0.0",
-  "description": "CI/CD Workflow Demo",
+  "description": "CI/CD Workflow Testing ",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
